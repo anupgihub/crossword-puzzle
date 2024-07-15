@@ -24,9 +24,13 @@
             border: 1px solid #000;
             text-align: center;
             line-height: 30px;
+            font-size: 16px;
         }
         .highlight {
             background-color: orange;
+        }
+        .editable {
+            background-color: white;
         }
     </style>
 </head>
@@ -54,6 +58,8 @@
                 cellDiv.classList.add('cell');
                 if (cell === 1) {
                     cellDiv.classList.add('highlight');
+                    cellDiv.contentEditable = true;
+                    cellDiv.classList.add('editable');
                 }
                 crosswordContainer.appendChild(cellDiv);
             });
