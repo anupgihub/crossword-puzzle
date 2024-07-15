@@ -27,12 +27,11 @@
         .crossword {
             display: grid;
             grid-template-columns: repeat(17, 30px);
-            grid-gap: 2px;
+            grid-gap: 0;
         }
         .cell {
             width: 30px;
             height: 30px;
-            border: 1px solid #000;
             text-align: center;
             line-height: 30px;
             font-size: 16px;
@@ -59,13 +58,16 @@
         }
         .white {
             background-color: #ffffff; /* White for cells that need to be filled */
+            border: 1px solid #000; /* Border for cells with answers */
         }
         .orange {
             background-color: #ff6d43; /* Eviden Orange for filled cells */
+            border: 1px solid #000; /* Border for cells with answers */
         }
         .blue {
             background-color: #002d3c; /* Eviden Blue for correct answers */
             color: #ffffff; /* White text for better contrast */
+            border: 1px solid #000; /* Border for cells with answers */
         }
         .number {
             position: absolute;
@@ -117,7 +119,7 @@
                 [null, 2, null, null, null, null, null, 1, null, null, null, 1, null, null, null, null, null],
             ];
 
-            const answers = {
+                       const answers = {
                 "1": "SMPC",
                 "2": "LINKING",
                 "3": "ANONYMIZATION",
@@ -128,8 +130,7 @@
                 "8": "PET"
             };
 
-         
-                        const checkAnswers = () => {
+            const checkAnswers = () => {
                 for (let key in answers) {
                     const answer = answers[key];
                     const inputs = document.querySelectorAll(`[data-answer="${key}"]`);
