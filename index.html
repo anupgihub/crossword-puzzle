@@ -13,15 +13,16 @@
             align-items: center;
             height: 100vh;
             margin: 0;
-            background-color: transparent;
+            background-color: #f0f0f0;
             background-image: url('https://raw.githubusercontent.com/anupgihub/crossword-puzzle/main/background%20puzzle.png');
             background-size: cover;
             background-position: center;
         }
         .crossword-container {
-            background-color: #ffffff; /* Solid white background */
-            padding: 10px;
+            background-color: #fff;
+            padding: 20px;
             border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
         }
         .crossword {
             display: grid;
@@ -36,7 +37,7 @@
             line-height: 30px;
             font-size: 16px;
             position: relative;
-            background-color: #ffffff; /* Make sure all cells have a solid background */
+            background-color: #fff;
         }
         .cell input {
             width: 100%;
@@ -54,10 +55,10 @@
             outline: none;
         }
         .transparent {
-            background-color: #ffffff; /* Solid white for unused cells */
+            background-color: #f0f0f0; /* Light grey for unused cells */
         }
         .white {
-            background-color: #ffffff; /* Solid white for cells that need to be filled */
+            background-color: #fff; /* White for cells that need to be filled */
         }
         .orange {
             background-color: #ff6d43; /* Eviden Orange for filled cells */
@@ -133,10 +134,12 @@
                     let correct = true;
                     inputs.forEach((input, index) => {
                         if (input.value.toUpperCase() !== answer[index]) {
+                            correct = false
+                                                    if (input.value.toUpperCase() !== answer[index]) {
                             correct = false;
                         }
                     });
-                                     if (correct) {
+                    if (correct) {
                         inputs.forEach(input => {
                             input.parentElement.classList.remove('orange');
                             input.parentElement.classList.add('blue');
@@ -144,7 +147,7 @@
                         });
                     }
                 }
-            }
+            };
 
             const crosswordContainer = document.getElementById('crossword');
 
