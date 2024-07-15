@@ -12,11 +12,11 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
-            background-color: #ececed; /* Eviden Gray background */
+            background-color: #ececed; /* Light Gray background */
         }
         .crossword {
             display: grid;
-            grid-template-columns: repeat(13, 30px); /* Adjusted to fit the new layout */
+            grid-template-columns: repeat(17, 30px); /* Adjusted to fit the new layout */
             grid-gap: 2px;
         }
         .cell {
@@ -65,29 +65,36 @@
 
     <script>
         const crosswordLayout = [
-            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-            [0, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1],
-            [0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0],
-            [0, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1],
-            [0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0],
-            [0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0],
-            [0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0],
-            [1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 0, 0],
-            [0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0],
-            [0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 1, 1, 0],
+            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 4, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0],
+            [0, 6, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0, 0, 0],
+            [0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0],
+            [0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0],
+            [7, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1],
+            [0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+            [0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+            [0, 8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
         ];
 
         const numbers = [
-            [null, null, null, null, null, null, null, null, null, null, null, null, null],
-            [null, 7, null, null, null, null, null, null, null, null, null, null, null],
-            [null, null, null, null, 2, null, null, null, 4, null, null, null, null],
-            [null, 1, null, null, null, null, null, null, null, null, 3, null, null],
-            [null, null, null, null, null, null, null, null, null, null, null, null, null],
-            [null, null, null, null, null, null, null, null, null, null, null, null, null],
-            [null, null, null, null, null, null, null, null, null, null, null, null, null],
-            [6, null, null, null, null, null, null, null, null, null, null, null, null],
-            [null, 8, null, null, null, null, null, null, null, null, null, null, null],
-            [null, 5, null, null, null, null, null, null, null, null, null, null, null],
+            [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
+            [null, null, null, null, null, null, null, 3, null, null, null, null, null, null, null, null, null],
+            [null, null, null, null, null, null, null, 1, null, null, null, null, null, null, null, null, null],
+            [null, null, null, null, null, null, null, 1, null, null, null, null, null, null, null, null, null],
+            [null, null, null, null, null, null, null, 1, null, null, null, 4, null, null, null, null, null],
+            [null, null, null, null, null, null, null, 1, null, null, null, 1, null, null, null, null, null],
+            [null, null, null, null, null, null, null, 1, null, null, null, 1, null, null, null, null, null],
+            [null, 6, null, null, null, null, null, 1, null, null, null, 1, null, 5, null, null, null],
+            [null, 2, null, null, null, null, null, 1, null, null, null, 1, null, 1, null, null, null],
+            [null, 2, null, null, null, null, null, null, null, null, null, null, null, 1, null, null, null],
+            [7, 2, null, null, null, null, null, null, null, null, null, null, null, 2, null, null, null],
+            [null, 2, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
+            [null, 8, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
         ];
 
         const crosswordContainer = document.getElementById('crossword');
