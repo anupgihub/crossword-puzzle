@@ -52,8 +52,8 @@
         .cell input:focus {
             outline: none;
         }
-        .black {
-            background-color: #000000; /* Black for unused cells */
+        .transparent {
+            background-color: transparent; /* Transparent for unused cells */
         }
         .white {
             background-color: rgba(255, 255, 255, 0.8); /* Transparent white for cells that need to be filled */
@@ -130,8 +130,8 @@
                 let correct = true;
                 inputs.forEach((input, index) => {
                     if (input.value.toUpperCase() !== answer[index]) {
+                                           if (input.value.toUpperCase() !== answer[index]) {
                         correct = false;
-
                     }
                 });
                 if (correct) {
@@ -151,18 +151,12 @@
                 const cellDiv = document.createElement('div');
                 cellDiv.classList.add('cell');
                 if (cell === 0) {
-                    cellDiv.classList.add('black');
+                    cellDiv.classList.add('transparent');
                 } else if (cell === 1) {
                     cellDiv.classList.add('white');
                     const input = document.createElement('input');
                     input.maxLength = 1;
-                    const answerKey = Object.keys(answers).find(key => {
-                        const pos = crosswordLayout.map(r => r.indexOf(parseInt(key))).indexOf(rowIndex);
-                        return pos !== -1 && colIndex >= pos && colIndex < pos + answers[key].length;
-                    });
-                    if (answerKey) {
-                        input.dataset.answer = answerKey;
-                    }
+                    input.dataset.answer = numbers[rowIndex][colIndex];
                     input.addEventListener('input', (e) => {
                         if (e.target.value.length > 1) {
                             e.target.value = e.target.value.charAt(0);
@@ -191,4 +185,3 @@
 </body>
 </html>
 
-                   
