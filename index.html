@@ -130,16 +130,19 @@
                 let correct = true;
                 inputs.forEach((input, index) => {
                     if (input.value.toUpperCase() !== answer[index]) {
-                                           if (input.value.toUpperCase() !== answer[index]) {
                         correct = false;
                     }
                 });
                 if (correct) {
                     inputs.forEach(input => {
-                        input.parentElement.classList.remove('orange');
-                        input.parentElement.classList.add('blue');
-                        input.readOnly = true; // Make input read-only if correct
-                    });
+                        input.parentElement.classList
+                                            if (correct) {
+                        inputs.forEach(input => {
+                            input.parentElement.classList.remove('orange');
+                            input.parentElement.classList.add('blue');
+                            input.readOnly = true; // Make input read-only if correct
+                        });
+                    }
                 }
             }
         };
