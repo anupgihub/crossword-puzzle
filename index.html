@@ -10,18 +10,18 @@
         }
         .crossword {
             display: grid;
-            grid-template-columns: repeat(8, 50px);
-            grid-template-rows: repeat(8, 50px);
+            grid-template-columns: repeat(18, 30px);
+            grid-template-rows: repeat(18, 30px);
             gap: 1px;
         }
         .crossword div {
-            width: 50px;
-            height: 50px;
+            width: 30px;
+            height: 30px;
             display: flex;
             justify-content: center;
             align-items: center;
             border: 1px solid #000;
-            font-size: 24px;
+            font-size: 14px;
         }
         .filled {
             background-color: #000;
@@ -32,39 +32,60 @@
 <body>
     <h1>Crossword Puzzle</h1>
     <div class="crossword">
-        <div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div></div><div class="filled"></div><div class="filled"></div><div class="filled"></div>
-        <div class="filled"></div><div class="filled"></div><div></div><div class="filled"></div><div></div><div></div><div class="filled"></div><div class="filled"></div>
-        <div class="filled"></div><div>I</div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div></div><div></div><div class="filled"></div>
-        <div class="filled"></div><div>N</div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div></div><div></div><div class="filled"></div>
-        <div class="filled"></div><div>K</div><div class="filled"></div><div class="filled"></div><div>H</div><div class="filled"></div><div></div><div class="filled"></div>
-        <div></div><div>I</div><div class="filled"></div><div>E</div><div>O</div><div>M</div><div class="filled"></div><div class="filled"></div>
-        <div></div><div>N</div><div class="filled"></div><div>N</div><div>R</div><div>O</div><div>M</div><div class="filled"></div>
-        <div>P</div><div class="filled"></div><div class="filled"></div><div></div><div></div><div class="filled"></div><div class="filled"></div><div class="filled"></div>
-        <div>E</div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div></div><div></div><div></div><div class="filled"></div>
-        <div>T</div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div></div><div></div><div></div><div class="filled"></div>
-        <div></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div></div><div></div><div></div><div class="filled"></div>
-        <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
-    </div>
-    <script>
-        // Populate the crossword with answers
-        const answers = [
-            { row: 2, col: 1, direction: 'down', answer: 'LINKING' },
-            { row: 0, col: 3, direction: 'down', answer: 'ANONYMIZATION' },
-            { row: 4, col: 4, direction: 'down', answer: 'HOMOMORPHIC' },
-            { row: 6, col: 0, direction: 'across', answer: 'PRIVACY' },
-            { row: 4, col: 2, direction: 'across', answer: 'ENCRYPTION' },
-            { row: 7, col: 0, direction: 'across', answer: 'PET' },
-            { row: 0, col: 0, direction: 'across', answer: 'PSEUDONYMIZATION' }
-        ];
+        <!-- First row -->
+        <div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div>A</div><div class="filled"></div><div class="filled"></div><div class="filled"></div>
 
-        answers.forEach(({ row, col, direction, answer }) => {
-            for (let i = 0; i < answer.length; i++) {
-                const cell = document.querySelector(`.crossword div:nth-child(${row * 8 + col + 1 + (direction === 'down' ? i * 8 : i)})`);
-                if (cell) {
-                    cell.textContent = answer[i];
-                }
-            }
-        });
-    </script>
+        <!-- Second row -->
+        <div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div>N</div><div class="filled"></div><div class="filled"></div><div class="filled"></div>
+
+        <!-- Third row -->
+        <div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div>O</div><div class="filled"></div><div class="filled"></div><div class="filled"></div>
+
+        <!-- Fourth row -->
+        <div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div>N</div><div class="filled"></div><div class="filled"></div><div class="filled"></div>
+
+        <!-- Fifth row -->
+        <div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div>Y</div><div class="filled"></div><div class="filled"></div><div class="filled"></div>
+
+        <!-- Sixth row -->
+        <div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div>E</div><div></div><div class="filled"></div><div class="filled"></div><div class="filled"></div>
+
+        <!-- Seventh row -->
+        <div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div>P</div><div>R</div><div>I</div><div>V</div><div>A</div><div>C</div><div>Y</div>
+
+        <!-- Eighth row -->
+        <div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div>Z</div><div class="filled"></div><div>R</div><div class="filled"></div><div>H</div><div class="filled"></div><div class="filled"></div>
+
+        <!-- Ninth row -->
+        <div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div>L</div><div class="filled"></div><div>A</div><div class="filled"></div><div>T</div><div class="filled"></div><div>Y</div><div class="filled"></div><div>O</div><div class="filled"></div><div>M</div><div class="filled"></div>
+
+        <!-- Tenth row -->
+        <div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div>I</div><div class="filled"></div><div>T</div><div class="filled"></div><div>P</div><div class="filled"></div><div>O</div><div class="filled"></div><div>M</div><div class="filled"></div><div class="filled"></div><div class="filled"></div>
+
+        <!-- Eleventh row -->
+        <div>P</div><div>S</div><div>E</div><div>U</div><div>D</div><div>O</div><div>N</div><div>Y</div><div>M</div><div>I</div><div>Z</div><div>A</div><div>T</div><div>I</div><div>O</div><div>N</div><div class="filled"></div><div class="filled"></div>
+
+        <!-- Twelfth row -->
+        <div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div>K</div><div class="filled"></div><div>O</div><div class="filled"></div><div class="filled"></div><div>I</div><div class="filled"></div><div>M</div><div class="filled"></div><div class="filled"></div><div class="filled"></div>
+
+        <!-- Thirteenth row -->
+        <div class="filled"></div><div>P</div><div>E</div><div>T</div><div class="filled"></div><div class="filled"></div><div>I</div><div class="filled"></div><div>N</div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div>O</div><div class="filled"></div><div>O</div><div class="filled"></div><div class="filled"></div>
+
+        <!-- Fourteenth row -->
+        <div class="filled"></div><div>C</div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div>N</div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div>N</div><div class="filled"></div><div>R</div><div class="filled"></div><div class="filled"></div>
+
+        <!-- Fifteenth row -->
+        <div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div>G</div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div>P</div><div class="filled"></div><div class="filled"></div><div class="filled"></div>
+
+        <!-- Sixteenth row -->
+        <div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div>H</div><div class="filled"></div><div class="filled"></div><div class="filled"></div>
+
+        <!-- Seventeenth row -->
+        <div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div>I</div><div class="filled"></div><div class="filled"></div><div class="filled"></div>
+
+        <!-- Eighteenth row -->
+        <div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div>C</div><div class="filled"></div><div class="filled"></div><div class="filled"></div>
+
+    </div>
 </body>
 </html>
