@@ -85,19 +85,19 @@
 
             const crosswordLayout = [
                 [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-                [0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0],
                 [0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
                 [0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-                [0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 4, 0, 0, 0, 0, 0],
+                [0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
                 [0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0],
                 [0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0],
-                [0, 6, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0, 0, 0],
+                [0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0],
                 [0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0],
-                [0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0],
-                [7, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1],
+                [0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0],
+                [0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0],
+                [1, 1, 1, 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 1, 1, 1],
                 [0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
                 [0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-                [0, 8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+                [0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
             ];
 
             const numbers = [
@@ -110,10 +110,11 @@
                 [null, null, null, null, null, null, null, 1, null, null, null, 1, null, null, null, null, null],
                 [null, 6, null, null, null, null, null, 1, null, null, null, 1, null, 5, null, null, null],
                 [null, 2, null, null, null, null, null, 1, null, null, null, 1, null, 1, null, null, null],
-                [null, 2, null, null, null, null, null, null, null, null, null, null, null, 1, null, null, null],
-                [7, 2, null, null, null, null, null, null, null, null, null, null, null, 2, null, null, null],
-                [null, 2, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
-                [null, 8, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
+                [null, 2, null, null, null, null, null, 1, null, null, null, 1, null, 1, null, null, null],
+                [7, 2, null, null, null, null, null, 1, null, null, null, 1, 2, 2, 2, 2, 2],
+                [null, 2, null, null, null, null, null, 1, null, null, null, 1, null, null, null, null, null],
+                [null, 8, null, null, null, null, null, 1, null, null, null, 1, null, null, null, null, null],
+                [null, 2, null, null, null, null, null, 1, null, null, null, 1, null, null, null, null, null],
             ];
 
             const answers = {
@@ -127,7 +128,8 @@
                 "8": "PET"
             };
 
-            const checkAnswers = () => {
+         
+                        const checkAnswers = () => {
                 for (let key in answers) {
                     const answer = answers[key];
                     const inputs = document.querySelectorAll(`[data-answer="${key}"]`);
@@ -140,8 +142,7 @@
                     if (correct) {
                         inputs.forEach(input => {
                             input.parentElement.classList.remove('orange');
-                            input.parentElement.classList
-                                                        input.parentElement.classList.add('blue');
+                            input.parentElement.classList.add('blue');
                             input.readOnly = true; // Make input read-only if correct
                         });
                     }
