@@ -19,7 +19,7 @@
             background-position: center;
         }
         .crossword-container {
-            background-color: rgba(255, 255, 255, 0.8);
+            background-color: #ffffff; /* Solid white background */
             padding: 10px;
             border-radius: 10px;
         }
@@ -36,6 +36,7 @@
             line-height: 30px;
             font-size: 16px;
             position: relative;
+            background-color: #ffffff; /* Make sure all cells have a solid background */
         }
         .cell input {
             width: 100%;
@@ -53,17 +54,17 @@
             outline: none;
         }
         .transparent {
-            background-color: transparent;
+            background-color: #ffffff; /* Solid white for unused cells */
         }
         .white {
-            background-color: rgba(255, 255, 255, 0.8);
+            background-color: #ffffff; /* Solid white for cells that need to be filled */
         }
         .orange {
-            background-color: #ff6d43;
+            background-color: #ff6d43; /* Eviden Orange for filled cells */
         }
         .blue {
-            background-color: #002d3c;
-            color: #ffffff;
+            background-color: #002d3c; /* Eviden Blue for correct answers */
+            color: #ffffff; /* White text for better contrast */
         }
         .number {
             position: absolute;
@@ -125,22 +126,17 @@
                 "8": "PET"
             };
 
-          
-
-        const checkAnswers = () => {
-            for (let key in answers) {
-                const answer = answers[key];
-                const inputs = document.querySelectorAll(`[data-answer="${key}"]`);
-                let correct = true;
-                inputs.forEach((input, index) => {
-                    if (input.value.toUpperCase() !== answer[index]) {
-                        correct = false;
-                    }
-                });
-                if (correct) {
-                    inputs.forEach(input => {
-                        input.parentElement.classList
-                                            if (correct) {
+            const checkAnswers = () => {
+                for (let key in answers) {
+                    const answer = answers[key];
+                    const inputs = document.querySelectorAll(`[data-answer="${key}"]`);
+                    let correct = true;
+                    inputs.forEach((input, index) => {
+                        if (input.value.toUpperCase() !== answer[index]) {
+                            correct = false;
+                        }
+                    });
+                                     if (correct) {
                         inputs.forEach(input => {
                             input.parentElement.classList.remove('orange');
                             input.parentElement.classList.add('blue');
@@ -149,43 +145,43 @@
                     }
                 }
             }
-        };
 
-        const crosswordContainer = document.getElementById('crossword');
+            const crosswordContainer = document.getElementById('crossword');
 
-        crosswordLayout.forEach((row, rowIndex) => {
-            row.forEach((cell, colIndex) => {
-                const cellDiv = document.createElement('div');
-                cellDiv.classList.add('cell');
-                if (cell === 0) {
-                    cellDiv.classList.add('transparent');
-                } else if (cell === 1) {
-                    cellDiv.classList.add('white');
-                    const input = document.createElement('input');
-                    input.maxLength = 1;
-                    input.dataset.answer = numbers[rowIndex][colIndex];
-                    input.addEventListener('input', (e) => {
-                        if (e.target.value.length > 1) {
-                            e.target.value = e.target.value.charAt(0);
-                        }
-                        if (e.target.value !== '') {
-                            cellDiv.classList.remove('white');
-                            cellDiv.classList.add('orange');
-                        } else {
-                            cellDiv.classList.remove('orange');
-                            cellDiv.classList.add('white');
-                        }
-                        checkAnswers();
-                    });
-                    cellDiv.appendChild(input);
-                }
-                if (numbers[rowIndex][colIndex]) {
-                    const numberSpan = document.createElement('span');
-                    numberSpan.classList.add('number');
-                    numberSpan.textContent = numbers[rowIndex][colIndex];
-                    cellDiv.appendChild(numberSpan);
-                }
-                crosswordContainer.appendChild(cellDiv);
+            crosswordLayout.forEach((row, rowIndex) => {
+                row.forEach((cell, colIndex) => {
+                    const cellDiv = document.createElement('div');
+                    cellDiv.classList.add('cell');
+                    if (cell === 0) {
+                        cellDiv.classList.add('transparent');
+                    } else if (cell === 1) {
+                        cellDiv.classList.add('white');
+                        const input = document.createElement('input');
+                        input.maxLength = 1;
+                        input.dataset.answer = numbers[rowIndex][colIndex];
+                        input.addEventListener('input', (e) => {
+                            if (e.target.value.length > 1) {
+                                e.target.value = e.target.value.charAt(0);
+                            }
+                            if (e.target.value !== '') {
+                                cellDiv.classList.remove('white');
+                                cellDiv.classList.add('orange');
+                            } else {
+                                cellDiv.classList.remove('orange');
+                                cellDiv.classList.add('white');
+                            }
+                            checkAnswers();
+                        });
+                        cellDiv.appendChild(input);
+                    }
+                    if (numbers[rowIndex][colIndex]) {
+                        const numberSpan = document.createElement('span');
+                        numberSpan.classList.add('number');
+                        numberSpan.textContent = numbers[rowIndex][colIndex];
+                        cellDiv.appendChild(numberSpan);
+                    }
+                    crosswordContainer.appendChild(cellDiv);
+                });
             });
         });
     </script>
