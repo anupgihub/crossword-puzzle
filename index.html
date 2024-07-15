@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Crossword Puzzle</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Montserrat', sans-serif;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -65,6 +66,10 @@
                     cellDiv.classList.add('white');
                     cellDiv.contentEditable = true;
                     cellDiv.addEventListener('input', (e) => {
+                        const value = e.target.textContent.trim();
+                        if (value.length > 1) {
+                            e.target.textContent = value.charAt(0);
+                        }
                         if (e.target.textContent.trim() !== '') {
                             cellDiv.classList.remove('white');
                             cellDiv.classList.add('orange');
