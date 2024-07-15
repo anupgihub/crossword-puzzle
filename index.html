@@ -13,13 +13,10 @@
             align-items: center;
             height: 100vh;
             margin: 0;
-            background-color: #f0f0f0;
-            background-image: url('https://raw.githubusercontent.com/anupgihub/crossword-puzzle/main/background%20puzzle.png');
-            background-size: cover;
-            background-position: center;
+            background-color: #ff6d43; /* Eviden Orange background */
         }
         .crossword-container {
-            background-color: #fff;
+            background-color: #ffffff;
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0,0,0,0.1);
@@ -37,7 +34,7 @@
             line-height: 30px;
             font-size: 16px;
             position: relative;
-            background-color: #fff;
+            background-color: #ffffff;
         }
         .cell input {
             width: 100%;
@@ -55,10 +52,10 @@
             outline: none;
         }
         .transparent {
-            background-color: #f0f0f0; /* Light grey for unused cells */
+            background-color: transparent; /* Transparent for unused cells */
         }
         .white {
-            background-color: #fff; /* White for cells that need to be filled */
+            background-color: #ffffff; /* White for cells that need to be filled */
         }
         .orange {
             background-color: #ff6d43; /* Eviden Orange for filled cells */
@@ -134,15 +131,14 @@
                     let correct = true;
                     inputs.forEach((input, index) => {
                         if (input.value.toUpperCase() !== answer[index]) {
-                            correct = false
-                                                    if (input.value.toUpperCase() !== answer[index]) {
                             correct = false;
                         }
                     });
                     if (correct) {
                         inputs.forEach(input => {
                             input.parentElement.classList.remove('orange');
-                            input.parentElement.classList.add('blue');
+                            input.parentElement.classList
+                                                        input.parentElement.classList.add('blue');
                             input.readOnly = true; // Make input read-only if correct
                         });
                     }
