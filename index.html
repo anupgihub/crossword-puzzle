@@ -26,7 +26,7 @@
         }
         .crossword {
             display: grid;
-            grid-template-columns: repeat(17, 30px);
+            grid-template-columns: repeat(17, 30px); /* Adjust grid size as necessary */
             grid-gap: 0;
         }
         .cell {
@@ -86,113 +86,115 @@
             console.log("DOM fully loaded and parsed");
 
             const crosswordLayout = [
-                [0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0],
-                [0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0],
-                [0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0],
-                [0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0],
-                [0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0],
-                [0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 0, 0],
-                [0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 1, 0],
-                [0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 1, 0],
-                [0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 1, 0],
-                [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
-                [0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 1, 0],
-                [0, 1, 1, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 1, 0],
-                [0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 1, 0],
-                [0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0],
-                [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0],
-                [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0],
-                [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0],
+                [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+                [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0],
+                [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0],
+                [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0],
+                [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0],
+                [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0],
+                [0, 0, 0, 0, 0, 0, 0, 0, 6, 0, 0, 0, 1, 0, 0, 0, 0],
+                [0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 0, 5, 0, 0],
+                [0, 0, 0, 0, 0, 0, 2, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0],
+                [7, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0],
+                [0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0],
+                [0, 1, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0],
+                [0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0],
+                [0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0],
+                [0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0],
+                [0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0],
+                [0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0],
+                [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0],
             ];
 
-            const numbers = [
-                [null, null, null, null, null, null, null, null, null, 3, null, null, null, null, null, null],
-                [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
-                [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
-                [null, null, null, null, null, null, null, null, null, null, null, null, 4, null, null, null],
-                [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
-                [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
-                [null, null, null, null, null, null, null, 6, null, null, null, null, null, null, null, null],
-                [null, null, null, null, null, null, null, null, null, null, null, null, null, null, 5, null],
-                [null, null, null, null, null, null, 2, null, null, null, null, null, null, null, null, null],
-                [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
-                [7, 1, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
-                [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
-                [null, 8, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
-                [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
-                                [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
-                [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
-            ];
+           const numbers = [
+    [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
+    [null, null, null, null, null, null, null, null, null, null, null, null, 3, null, null, null, null],
+    [null, null, null, null, null, null, null, null, null, null, null, null, 1, null, null, null, null],
+    [null, null, null, null, null, null, null, null, null, null, null, null, 1, null, null, null, null],
+    [null, null, null, null, null, null, null, null, null, null, null, null, 1, null, null, null, null],
+    [null, null, null, null, null, null, null, null, null, null, null, null, 1, null, null, null, null],
+    [null, null, null, null, null, null, null, null, 6, null, null, null, 1, null, null, null, null],
+    [null, null, null, null, null, null, null, null, 1, 1, 1, 1, 1, null, 5, null, null],
+    [null, null, null, null, null, null, 2, 1, null, null, null, null, 1, null, 1, null, null],
+    [7, 1, 1, 1, 1, 1, 1, 1, null, null, null, null, 1, null, 1, null, null],
+    [null, 1, null, null, null, null, null, 1, null, null, null, null, 1, null, 1, null, null],
+    [null, 1, null, null, null, null, null, 1, 1, 1, 1, 1, 1, 1, 1, null, null],
+    [null, 1, null, null, null, null, null, null, null, null, null, null, null, null, 1, null, null],
+    [null, 1, null, null, null, null, null, null, null, null, null, null, null, null, 1, null, null],
+    [null, 1, null, null, null, null, null, null, null, null, null, null, null, null, 1, null, null],
+    [null, 1, null, null, null, null, null, null, null, null, null, null, null, null, 1, null, null],
+    [null, 1, null, null, null, null, null, null, null, null, null, null, null, null, 1, null, null],
+    [null, null, null, null, null, null, null, null, null, null, null, null, null, null, 1, null, null],
+];
 
-            const answers = {
-                "1": "SMPC",
-                "2": "LINKING",
-                "3": "ANONYMIZATION",
-                "4": "ENCRYPTION",
-                "5": "HOMOMORPHIC",
-                "6": "PRIVACY",
-                "7": "PSEUDONYMIZATION",
-                "8": "PET"
-            };
+const answers = {
+    "1": "SMPC",
+    "2": "LINKING",
+    "3": "ANONYMIZATION",
+    "4": "ENCRYPTION",
+    "5": "HOMOMORPHIC",
+    "6": "PRIVACY",
+    "7": "PSEUDONYMIZATION",
+    "8": "PET"
+};
 
-            const checkAnswers = () => {
-                for (let key in answers) {
-                    const answer = answers[key];
-                    const inputs = document.querySelectorAll(`[data-answer="${key}"]`);
-                    let correct = true;
-                    inputs.forEach((input, index) => {
-                        if (input.value.toUpperCase() !== answer[index]) {
-                            correct = false;
-                        }
-                    });
-                    if (correct) {
-                        inputs.forEach(input => {
-                            input.parentElement.classList.remove('orange');
-                            input.parentElement.classList.add('blue');
-                            input.readOnly = true; // Make input read-only if correct
-                        });
-                    }
-                }
-            };
-
-            const crosswordContainer = document.getElementById('crossword');
-
-            crosswordLayout.forEach((row, rowIndex) => {
-                row.forEach((cell, colIndex) => {
-                    const cellDiv = document.createElement('div');
-                    cellDiv.classList.add('cell');
-                    if (cell === 0) {
-                        cellDiv.classList.add('transparent');
-                    } else if (cell === 1) {
-                        cellDiv.classList.add('white');
-                        const input = document.createElement('input');
-                        input.maxLength = 1;
-                        input.dataset.answer = numbers[rowIndex][colIndex];
-                        input.addEventListener('input', (e) => {
-                            if (e.target.value.length > 1) {
-                                e.target.value = e.target.value.charAt(0);
-                            }
-                            if (e.target.value !== '') {
-                                cellDiv.classList.remove('white');
-                                cellDiv.classList.add('orange');
-                            } else {
-                                cellDiv.classList.remove('orange');
-                                cellDiv.classList.add('white');
-                            }
-                            checkAnswers();
-                        });
-                        cellDiv.appendChild(input);
-                    }
-                    if (numbers[rowIndex][colIndex] !== null) {
-                        const numberSpan = document.createElement('span');
-                        numberSpan.classList.add('number');
-                        numberSpan.textContent = numbers[rowIndex][colIndex];
-                        cellDiv.appendChild(numberSpan);
-                    }
-                    crosswordContainer.appendChild(cellDiv);
-                });
-            });
+const checkAnswers = () => {
+    for (let key in answers) {
+        const answer = answers[key];
+        const inputs = document.querySelectorAll(`[data-answer="${key}"]`);
+        let correct = true;
+        inputs.forEach((input, index) => {
+            if (input.value.toUpperCase() !== answer[index]) {
+                correct = false;
+            }
         });
-    </script>
+        if (correct) {
+            inputs.forEach(input => {
+                input.parentElement.classList.remove('orange');
+                input.parentElement.classList.add('blue');
+                input.readOnly = true; // Make input read-only if correct
+            });
+        }
+    }
+};
+
+const crosswordContainer = document.getElementById('crossword');
+
+crosswordLayout.forEach((row, rowIndex) => {
+    row.forEach((cell, colIndex) => {
+        const cellDiv = document.createElement('div');
+        cellDiv.classList.add('cell');
+        if (cell === 0) {
+            cellDiv.classList.add('transparent');
+        } else if (cell === 1) {
+            cellDiv.classList.add('white');
+            const input = document.createElement('input');
+            input.maxLength = 1;
+            input.dataset.answer = numbers[rowIndex][colIndex];
+            input.addEventListener('input', (e) => {
+                if (e.target.value.length > 1) {
+                    e.target.value = e.target.value.charAt(0);
+                }
+                if (e.target.value !== '') {
+                    cellDiv.classList.remove('white');
+                    cellDiv.classList.add('orange');
+                } else {
+                    cellDiv.classList.remove('orange');
+                    cellDiv.classList.add('white');
+                }
+                checkAnswers();
+            });
+            cellDiv.appendChild(input);
+        }
+        if (numbers[rowIndex][colIndex]) {
+            const numberSpan = document.createElement('span');
+            numberSpan.classList.add('number');
+            numberSpan.textContent = numbers[rowIndex][colIndex];
+            cellDiv.appendChild(numberSpan);
+        }
+        crosswordContainer.appendChild(cellDiv);
+    });
+});
+</script>
 </body>
 </html>
