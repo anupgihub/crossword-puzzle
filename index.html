@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crossword Puzzle</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+        .crossword {
+            display: grid;
+            grid-template-columns: repeat(10, 30px);
+            grid-gap: 2px;
+        }
+        .cell {
+            width: 30px;
+            height: 30px;
+            border: 1px solid #000;
+            text-align: center;
+            line-height: 30px;
+        }
+        .highlight {
+            background-color: orange;
+        }
+    </style>
+</head>
+<body>
+    <div class="crossword" id="crossword"></div>
+
+    <script>
+        const crosswordLayout = [
+            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+            [0, 1, 1, 1, 1, 0, 1, 1, 1, 1],
+            [0, 0, 0, 0, 1, 0, 0, 0, 1, 0],
+            [0, 0, 1, 1, 1, 1, 1, 1, 1, 0],
+            [0, 0, 0, 0, 1, 0, 0, 0, 1, 0],
+            [0, 0, 1, 1, 1, 1, 1, 1, 1, 0],
+            [0, 0, 0, 0, 1, 0, 0, 0, 1, 0],
+            [0, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+            [0, 1, 0, 0, 1, 0, 0, 1, 0, 0]
+        ];
+
+        const crosswordContainer = document.getElementById('crossword');
+        
+        crosswordLayout.forEach(row => {
+            row.forEach(cell => {
+                const cellDiv = document.createElement('div');
+                cellDiv.classList.add('cell');
+                if (cell === 1) {
+                    cellDiv.classList.add('highlight');
+                }
+                crosswordContainer.appendChild(cellDiv);
+            });
+        });
+    </script>
+</body>
+</html>
