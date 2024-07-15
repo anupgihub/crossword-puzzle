@@ -12,7 +12,16 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
+            margin: 0;
             background-color: #ececed; /* Light Gray background */
+            background-image: url('your-background-image-url.jpg'); /* Replace with your image URL */
+            background-size: cover;
+            background-position: center;
+        }
+        .crossword-container {
+            background-color: rgba(255, 255, 255, 0.8); /* Optional: To make the crossword more readable over the background */
+            padding: 10px;
+            border-radius: 10px;
         }
         .crossword {
             display: grid;
@@ -61,7 +70,9 @@
     </style>
 </head>
 <body>
-    <div class="crossword" id="crossword"></div>
+    <div class="crossword-container">
+        <div class="crossword" id="crossword"></div>
+    </div>
 
     <script>
         const crosswordLayout = [
@@ -117,21 +128,4 @@
                             cellDiv.classList.remove('white');
                             cellDiv.classList.add('orange');
                         } else {
-                            cellDiv.classList.remove('orange');
-                            cellDiv.classList.add('white');
-                        }
-                    });
-                    cellDiv.appendChild(input);
-                }
-                if (numbers[rowIndex][colIndex]) {
-                    const numberSpan = document.createElement('span');
-                    numberSpan.classList.add('number');
-                    numberSpan.textContent = numbers[rowIndex][colIndex];
-                    cellDiv.appendChild(numberSpan);
-                }
-                crosswordContainer.appendChild(cellDiv);
-            });
-        });
-    </script>
-</body>
-</html>
+                            cellDiv.classList.remove('
