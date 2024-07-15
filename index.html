@@ -14,18 +14,18 @@
             height: 100vh;
             margin: 0;
             background-color: transparent;
-            background-image: url('https://raw.githubusercontent.com/anupgihub/crossword-puzzle/main/background%20puzzle.png'); /* Background image URL */
+            background-image: url('https://raw.githubusercontent.com/anupgihub/crossword-puzzle/main/background%20puzzle.png');
             background-size: cover;
             background-position: center;
         }
         .crossword-container {
-            background-color: rgba(255, 255, 255, 0.8); /* Optional: To make the crossword more readable over the background */
+            background-color: rgba(255, 255, 255, 0.8);
             padding: 10px;
             border-radius: 10px;
         }
         .crossword {
             display: grid;
-            grid-template-columns: repeat(17, 30px); /* Adjusted to fit the new layout */
+            grid-template-columns: repeat(17, 30px);
             grid-gap: 2px;
         }
         .cell {
@@ -53,17 +53,17 @@
             outline: none;
         }
         .transparent {
-            background-color: transparent; /* Transparent for unused cells */
+            background-color: transparent;
         }
         .white {
-            background-color: rgba(255, 255, 255, 0.8); /* Transparent white for cells that need to be filled */
+            background-color: rgba(255, 255, 255, 0.8);
         }
         .orange {
-            background-color: #ff6d43; /* Eviden Orange for filled cells */
+            background-color: #ff6d43;
         }
         .blue {
-            background-color: #002d3c; /* Eviden Blue for correct answers */
-            color: #ffffff; /* White text for better contrast */
+            background-color: #002d3c;
+            color: #ffffff;
         }
         .number {
             position: absolute;
@@ -77,51 +77,53 @@
     <div class="crossword-container">
         <div class="crossword" id="crossword"></div>
     </div>
-
     <script>
-        const crosswordLayout = [
-            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-            [0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-            [0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-            [0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-            [0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 4, 0, 0, 0, 0, 0],
-            [0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0],
-            [0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0],
-            [0, 6, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0, 0, 0],
-            [0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0],
-            [0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0],
-            [7, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1],
-            [0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-            [0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-            [0, 8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-        ];
+        document.addEventListener('DOMContentLoaded', (event) => {
+            const crosswordLayout = [
+                [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+                [0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+                [0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+                [0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+                [0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 4, 0, 0, 0, 0, 0],
+                [0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0],
+                [0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0],
+                [0, 6, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0, 0, 0],
+                [0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0],
+                [0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0],
+                [7, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1],
+                [0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+                [0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+                [0, 8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+            ];
 
-        const numbers = [
-            [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
-            [null, null, null, null, null, null, null, 3, null, null, null, null, null, null, null, null, null],
-            [null, null, null, null, null, null, null, 1, null, null, null, null, null, null, null, null, null],
-            [null, null, null, null, null, null, null, 1, null, null, null, null, null, null, null, null, null],
-            [null, null, null, null, null, null, null, 1, null, null, null, 4, null, null, null, null, null],
-            [null, null, null, null, null, null, null, 1, null, null, null, 1, null, null, null, null, null],
-            [null, null, null, null, null, null, null, 1, null, null, null, 1, null, null, null, null, null],
-            [null, 6, null, null, null, null, null, 1, null, null, null, 1, null, 5, null, null, null],
-            [null, 2, null, null, null, null, null, 1, null, null, null, 1, null, 1, null, null, null],
-            [null, 2, null, null, null, null, null, null, null, null, null, null, null, 1, null, null, null],
-            [7, 2, null, null, null, null, null, null, null, null, null, null, null, 2, null, null, null],
-            [null, 2, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
-            [null, 8, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
-        ];
+            const numbers = [
+                [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
+                [null, null, null, null, null, null, null, 3, null, null, null, null, null, null, null, null, null],
+                [null, null, null, null, null, null, null, 1, null, null, null, null, null, null, null, null, null],
+                [null, null, null, null, null, null, null, 1, null, null, null, null, null, null, null, null, null],
+                [null, null, null, null, null, null, null, 1, null, null, null, 4, null, null, null, null, null],
+                [null, null, null, null, null, null, null, 1, null, null, null, 1, null, null, null, null, null],
+                [null, null, null, null, null, null, null, 1, null, null, null, 1, null, null, null, null, null],
+                [null, 6, null, null, null, null, null, 1, null, null, null, 1, null, 5, null, null, null],
+                [null, 2, null, null, null, null, null, 1, null, null, null, 1, null, 1, null, null, null],
+                [null, 2, null, null, null, null, null, null, null, null, null, null, null, 1, null, null, null],
+                [7, 2, null, null, null, null, null, null, null, null, null, null, null, 2, null, null, null],
+                [null, 2, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
+                [null, 8, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
+            ];
 
-        const answers = {
-            "1": "SMPC",
-            "2": "LINKING",
-            "3": "ANONYMIZATION",
-            "4": "ENCRYPTION",
-            "5": "HOMOMORPHIC",
-            "6": "PRIVACY",
-            "7": "PSEUDONYMIZATION",
-            "8": "PET"
-        };
+            const answers = {
+                "1": "SMPC",
+                "2": "LINKING",
+                "3": "ANONYMIZATION",
+                "4": "ENCRYPTION",
+                "5": "HOMOMORPHIC",
+                "6": "PRIVACY",
+                "7": "PSEUDONYMIZATION",
+                "8": "PET"
+            };
+
+          
 
         const checkAnswers = () => {
             for (let key in answers) {
