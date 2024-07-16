@@ -98,14 +98,11 @@
         document.querySelectorAll('.crossword input').forEach(input => {
             input.addEventListener('input', function() {
                 if (this.value === "") {
-                    this.classList.remove('correct');
-                    this.classList.remove('incorrect');
+                    this.style.backgroundColor = "transparent";
                 } else if (this.value.toLowerCase() === this.getAttribute('data-answer')) {
-                    this.classList.add('correct');
-                    this.classList.remove('incorrect');
+                    this.style.backgroundColor = "#ff6d43";
                 } else {
-                    this.classList.add('incorrect');
-                    this.classList.remove('correct');
+                    this.style.backgroundColor = "#002d3c";
                 }
             });
         });
