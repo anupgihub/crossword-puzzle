@@ -45,7 +45,7 @@
             margin: 0;
             text-transform: uppercase;
             position: relative;
-            background-color: #fff;
+            background-color: transparent;
         }
         .filled {
             width: 28px;
@@ -60,7 +60,7 @@
             background-color: #ff6d43;
         }
         .incorrect {
-            background-color:  #002d3c;
+            background-color: #002d3c;
         }
         .number {
             position: absolute;
@@ -97,11 +97,11 @@
     <script>
         document.querySelectorAll('.crossword input').forEach(input => {
             input.addEventListener('input', function() {
-                if (this.value.toLowerCase() === this.getAttribute('data-answer')) {
-                    this.classList.add('correct');
-                    this.classList.remove('incorrect');
-                } else if (this.value === "") {
+                if (this.value === "") {
                     this.classList.remove('correct');
+                    this.classList.remove('incorrect');
+                } else if (this.value.toLowerCase() === this.getAttribute('data-answer')) {
+                    this.classList.add('correct');
                     this.classList.remove('incorrect');
                 } else {
                     this.classList.add('incorrect');
