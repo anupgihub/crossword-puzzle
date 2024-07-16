@@ -14,7 +14,7 @@
             grid-template-rows: repeat(18, 30px);
             gap: 1px;
         }
-        .crossword div {
+        .crossword div, .crossword input {
             width: 30px;
             height: 30px;
             display: flex;
@@ -22,34 +22,61 @@
             align-items: center;
             border: 1px solid #000;
             font-size: 14px;
+            text-align: center;
         }
         .filled {
             background-color: #000;
             border: none;
         }
+        input {
+            border: 1px solid #000;
+            padding: 0;
+            margin: 0;
+            text-transform: uppercase;
+            text-align: center;
+        }
+        .correct {
+            background-color: #00FF00;
+        }
+        .incorrect {
+            background-color: #FF0000;
+        }
     </style>
 </head>
 <body>
     <h1>Crossword Puzzle</h1>
-    <div class="crossword">
-        <div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div>a</div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div>
-        <div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div>n</div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div>
-        <div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div>o</div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div>
-        <div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div>n</div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div>
-        <div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div>y</div><div class="filled"></div><div class="filled"></div><div>e</div><div class="filled"></div><div class="filled"></div><div class="filled"></div>
-        <div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div>m</div><div class="filled"></div><div class="filled"></div><div>n</div><div class="filled"></div><div class="filled"></div><div class="filled"></div>
-        <div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div>p</div><div>r</div><div>i</div><div>v</div><div>a</div><div>c</div><div>y</div><div class="filled"></div><div class="filled"></div>
-        <div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div>z</div><div class="filled"></div><div class="filled"></div><div>r</div><div class="filled"></div><div>h</div><div class="filled"></div>
-        <div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div>l</div><div class="filled"></div><div class="filled"></div><div>a</div><div class="filled"></div><div class="filled"></div><div>y</div><div class="filled"></div><div>o</div><div class="filled"></div>
-        <div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div>i</div><div class="filled"></div><div class="filled"></div><div>t</div><div class="filled"></div><div class="filled"></div><div>p</div><div class="filled"></div><div>m</div><div class="filled"></div>
-        <div>p</div><div>s</div><div>e</div><div>u</div><div>d</div><div>o</div><div>n</div><div>y</div><div>m</div><div>i</div><div>z</div><div>a</div><div>t</div><div>i</div><div>o</div><div>n</div>
-        <div class="filled"></div><div>m</div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div>k</div><div class="filled"></div><div class="filled"></div><div>o</div><div class="filled"></div><div class="filled"></div><div>i</div><div class="filled"></div><div>m</div><div class="filled"></div>
-        <div class="filled"></div><div>p</div><div>e</div><div>t</div><div class="filled"></div><div class="filled"></div><div>i</div><div class="filled"></div><div class="filled"></div><div>n</div><div class="filled"></div><div class="filled"></div><div>o</div><div class="filled"></div><div>o</div><div class="filled"></div>
-        <div class="filled"></div><div>c</div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div>n</div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div>n</div><div class="filled"></div><div>r</div><div class="filled"></div>
-        <div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div>g</div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div>p</div><div class="filled"></div>
-        <div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div>h</div><div class="filled"></div>
-        <div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div>i</div><div class="filled"></div>
-        <div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div>c</div><div class="filled"></div>
+    <div class="crossword" id="crossword">
+        <div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><input type="text" maxlength="1" data-answer="a"><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div>
+        <div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><input type="text" maxlength="1" data-answer="n"><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div>
+        <div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><input type="text" maxlength="1" data-answer="o"><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div>
+        <div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><input type="text" maxlength="1" data-answer="n"><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div>
+        <div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><input type="text" maxlength="1" data-answer="y"><div class="filled"></div><div class="filled"></div><input type="text" maxlength="1" data-answer="e"><div class="filled"></div><div class="filled"></div><div class="filled"></div>
+        <div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><input type="text" maxlength="1" data-answer="m"><div class="filled"></div><div class="filled"></div><input type="text" maxlength="1" data-answer="n"><div class="filled"></div><div class="filled"></div><div class="filled"></div>
+        <div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><input type="text" maxlength="1" data-answer="p"><input type="text" maxlength="1" data-answer="r"><input type="text" maxlength="1" data-answer="i"><input type="text" maxlength="1" data-answer="v"><input type="text" maxlength="1" data-answer="a"><input type="text" maxlength="1" data-answer="c"><input type="text" maxlength="1" data-answer="y"><div class="filled"></div><div class="filled"></div>
+        <div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><input type="text" maxlength="1" data-answer="z"><div class="filled"></div><div class="filled"></div><input type="text" maxlength="1" data-answer="r"><div class="filled"></div><input type="text" maxlength="1" data-answer="h"><div class="filled"></div>
+        <div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><input type="text" maxlength="1" data-answer="l"><div class="filled"></div><div class="filled"></div><input type="text" maxlength="1" data-answer="a"><div class="filled"></div><div class="filled"></div><input type="text" maxlength="1" data-answer="y"><div class="filled"></div><input type="text" maxlength="1" data-answer="o"><div class="filled"></div>
+        <div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><input type="text" maxlength="1" data-answer="i"><div class="filled"></div><div class="filled"></div><input type="text" maxlength="1" data-answer="t"><div class="filled"></div><div class="filled"></div><input type="text" maxlength="1" data-answer="p"><div class="filled"></div><input type="text" maxlength="1" data-answer="m"><div class="filled"></div>
+        <input type="text" maxlength="1" data-answer="p"><input type="text" maxlength="1" data-answer="s"><input type="text" maxlength="1" data-answer="e"><input type="text" maxlength="1" data-answer="u"><input type="text" maxlength="1" data-answer="d"><input type="text" maxlength="1" data-answer="o"><input type="text" maxlength="1" data-answer="n"><input type="text" maxlength="1" data-answer="y"><input type="text" maxlength="1" data-answer="m"><input type="text" maxlength="1" data-answer="i"><input type="text" maxlength="1" data-answer="z"><input type="text" maxlength="1" data-answer="a"><input type="text" maxlength="1" data-answer="t"><input type="text" maxlength="1" data-answer="i"><input type="text" maxlength="1" data-answer="o"><input type="text" maxlength="1" data-answer="n">
+        <div class="filled"></div><input type="text" maxlength="1" data-answer="m"><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><input type="text" maxlength="1" data-answer="k"><div class="filled"></div><div class="filled"></div><input type="text" maxlength="1" data-answer="o"><div class="filled"></div><div class="filled"></div><input type="text" maxlength="1" data-answer="i"><div class="filled"></div><input type="text" maxlength="1" data-answer="m"><div class="filled"></div>
+        <div class="filled"></div><input type="text" maxlength="1" data-answer="p"><input type="text" maxlength="1" data-answer="e"><input type="text" maxlength="1" data-answer="t"><div class="filled"></div><div class="filled"></div><input type="text" maxlength="1" data-answer="i"><div class="filled"></div><div class="filled"></div><input type="text" maxlength="1" data-answer="n"><div class="filled"></div><div class="filled"></div><input type="text" maxlength="1" data-answer="o"><div class="filled"></div><input type="text" maxlength="1" data-answer="o"><div class="filled"></div>
+        <div class="filled"></div><input type="text" maxlength="1" data-answer="c"><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><input type="text" maxlength="1" data-answer="n"><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><input type="text" maxlength="1" data-answer="n"><div class="filled"></div><input type="text" maxlength="1" data-answer="r"><div class="filled"></div>
+        <div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><input type="text" maxlength="1" data-answer="g"><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><input type="text" maxlength="1" data-answer="p"><div class="filled"></div>
+        <div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><input type="text" maxlength="1" data-answer="h"><div class="filled"></div>
+        <div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><input type="text" maxlength="1" data-answer="i"><div class="filled"></div>
+        <div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><input type="text" maxlength="1" data-answer="c"><div class="filled"></div>
     </div>
+    <script>
+        document.querySelectorAll('.crossword input').forEach(input => {
+            input.addEventListener('input', function() {
+                if (this.value.toLowerCase() === this.getAttribute('data-answer')) {
+                    this.classList.add('correct');
+                    this.classList.remove('incorrect');
+                } else {
+                    this.classList.add('incorrect');
+                    this.classList.remove('correct');
+                }
+            });
+        });
+    </script>
 </body>
 </html>
