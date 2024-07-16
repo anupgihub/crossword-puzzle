@@ -5,8 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Crossword Puzzle</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Montserrat', sans-serif;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -44,6 +45,7 @@
             margin: 0;
             text-transform: uppercase;
             position: relative;
+            background-color: #fff;
         }
         .filled {
             width: 28px;
@@ -54,7 +56,7 @@
             background-color: transparent;
             position: relative;
         }
-          .correct {
+        .correct {
             background-color: #ff6d43;
         }
         .incorrect {
@@ -97,6 +99,9 @@
             input.addEventListener('input', function() {
                 if (this.value.toLowerCase() === this.getAttribute('data-answer')) {
                     this.classList.add('correct');
+                    this.classList.remove('incorrect');
+                } else if (this.value === "") {
+                    this.classList.remove('correct');
                     this.classList.remove('incorrect');
                 } else {
                     this.classList.add('incorrect');
