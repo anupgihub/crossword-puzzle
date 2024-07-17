@@ -95,17 +95,20 @@
         </div>
     </div>
     <script>
-        document.querySelectorAll('.crossword input').forEach(input => {
-            input.addEventListener('input', function() {
-                if (this.value === "") {
-                    this.style.backgroundColor = "transparent";
-                } else if (this.value.toLowerCase() === this.getAttribute('data-answer')) {
-                    this.style.backgroundColor = "#ff6d43";
-                } else {
-                    this.style.backgroundColor = "#002d3c";
-                }
-            });
-        });
+document.querySelectorAll('.crossword input').forEach(input => {
+    input.addEventListener('input', function() {
+        if (this.value === "") {
+            this.style.backgroundColor = "transparent";
+            this.style.color = "black";  // Reset font color to black
+        } else if (this.value.toLowerCase() === this.getAttribute('data-answer')) {
+            this.style.backgroundColor = "#ff6d43";
+            this.style.color = "black";  // Correct answer font color remains black
+        } else {
+            this.style.backgroundColor = "#002d3c";
+            this.style.color = "white";  // Incorrect answer font color set to white
+        }
+    });
+});
     </script>
 </body>
 </html>
