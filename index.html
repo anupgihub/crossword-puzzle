@@ -94,7 +94,19 @@
             <div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"></div><div class="filled"><input type="text" maxlength="1" data-answer="c"></div><div class="filled"></div>
         </div>
     </div>
+<div id="success-message">Success! Congratulations on completing it</div>
+
     <script>
+function checkCompletion() {
+    let allCorrect = true;
+    document.querySelectorAll('.crossword input').forEach(input => {
+        if (input.value.toLowerCase() !== input.getAttribute('data-answer')) {
+            allCorrect = false;
+        }
+    });
+    return allCorrect;
+}
+
 document.querySelectorAll('.crossword input').forEach(input => {
     input.addEventListener('input', function() {
         if (this.value === "") {
@@ -106,6 +118,12 @@ document.querySelectorAll('.crossword input').forEach(input => {
         } else {
             this.style.backgroundColor = "#002d3c";
             this.style.color = "white";  // Incorrect answer font color set to white
+        }
+
+        if (checkCompletion()) {
+            document.getElementById('success-message').style.display = 'block';
+        } else {
+            document.getElementById('success-message').style.display = 'none';
         }
     });
 });
